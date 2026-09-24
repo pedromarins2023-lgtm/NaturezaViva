@@ -1,0 +1,834 @@
+/* =========================================================
+   NATUREZA VIVA — ODS 15
+   TEMA: MODO ESCURO + VERDE
+========================================================= */
+
+
+/* =========================================================
+   CORES
+========================================================= */
+
+:root {
+
+    --verde-principal: #3fa66b;
+
+    --verde-claro: #8ed6a8;
+
+    --verde-medio: #58b87d;
+
+    --verde-escuro: #10261a;
+
+    --verde-profundo: #07140d;
+
+    --preto: #050505;
+
+    --fundo-escuro: #0b0f0c;
+
+    --fundo-card: #111713;
+
+    --branco: #ffffff;
+
+    --texto: #e8f1eb;
+
+    --texto-suave: #aebdb3;
+
+    --borda: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--fundo-escuro);
+
+    color: var(--texto);
+}
+
+
+img,
+video {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CABEÇALHO — RESERVADO
+========================================================= */
+
+.cabecalho-placeholder {
+    width: 100%;
+
+    min-height: 0;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   HERO PRINCIPAL
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 820px;
+
+    overflow: hidden;
+
+    color: var(--branco);
+
+    background:
+        linear-gradient(
+            120deg,
+            #0d3d24 0%,
+            #092b1a 45%,
+            #050b07 100%
+        );
+}
+
+
+/* =========================================================
+   EFEITO SOBRE O FUNDO
+========================================================= */
+
+.hero::before {
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(63, 166, 107, 0.20),
+            rgba(2, 15, 8, 0.88)
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   IMAGEM DE FUNDO
+========================================================= */
+
+.hero-fundo {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("5.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   OVERLAY ESCURO
+========================================================= */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.35) 45%,
+            rgba(4, 20, 10, 0.20) 100%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER DO HERO
+========================================================= */
+
+.hero-container {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    min-height: 820px;
+
+    margin: 0 auto;
+
+    padding: 120px 40px 180px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO HERO
+========================================================= */
+
+.hero-content {
+
+    max-width: 650px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.hero-titulo {
+
+    width: 100%;
+}
+
+
+.hero-subtitulo {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--verde-claro);
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.hero h1 {
+
+    margin: 0 0 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(45px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+}
+
+
+.hero h1 strong {
+
+    display: block;
+
+    color: #b9e8c8;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO HERO
+========================================================= */
+
+.hero-descricao {
+
+    max-width: 600px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ONDAS
+========================================================= */
+
+.ondas {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -1px;
+
+    width: 100%;
+
+    height: 220px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+.onda {
+
+    position: absolute;
+
+    left: -5%;
+
+    width: 110%;
+
+    border-radius: 50% 50% 0 0;
+}
+
+
+/* =========================================================
+   PRIMEIRA ONDA
+========================================================= */
+
+.onda-1 {
+
+    bottom: -130px;
+
+    height: 270px;
+
+    background:
+        rgba(25, 106, 66, 0.75);
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================================
+   SEGUNDA ONDA
+========================================================= */
+
+.onda-2 {
+
+    bottom: -155px;
+
+    height: 260px;
+
+    background:
+        rgba(18, 75, 48, 0.95);
+
+    transform: rotate(3deg);
+}
+
+
+/* =========================================================
+   TERCEIRA ONDA — ESCURA
+========================================================= */
+
+.onda-3 {
+
+    bottom: -185px;
+
+    height: 280px;
+
+    background: var(--fundo-escuro);
+
+    transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   SOBRE — ODS 15
+========================================================= */
+
+.sobre {
+
+    padding: 100px 40px;
+
+    background: var(--fundo-escuro);
+
+    color: var(--texto);
+}
+
+
+.sobre-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.sobre-destaque {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--verde-medio);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.sobre h2 {
+
+    max-width: 750px;
+
+    margin: 15px auto 25px;
+
+    color: var(--branco);
+
+    font-size: clamp(32px, 4vw, 45px);
+
+    line-height: 1.15;
+}
+
+
+.sobre-container > p {
+
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    color: var(--texto-suave);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BLOCOS COM IMAGEM
+========================================================= */
+
+.sobre-bloco {
+
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    text-align: left;
+}
+
+
+.sobre-bloco-invertido {
+
+    direction: rtl;
+}
+
+
+.sobre-bloco-invertido .sobre-texto {
+
+    direction: ltr;
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+.sobre-imagem {
+
+    width: 100%;
+
+    height: auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--borda);
+
+    background: var(--fundo-card);
+}
+
+
+.sobre-imagem img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+}
+
+
+.sobre-imagem:hover img {
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   TEXTO DOS BLOCOS
+========================================================= */
+
+.sobre-texto h3 {
+
+    margin: 0 0 15px;
+
+    color: var(--verde-claro);
+
+    font-size: 28px;
+}
+
+
+.sobre-texto p {
+
+    margin: 0;
+
+    color: var(--texto-suave);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   VÍDEO
+========================================================= */
+
+.video {
+
+    padding: 100px 30px;
+
+    background: #080d0a;
+}
+
+
+.video-container {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.video-destaque {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--verde-medio);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.video h2 {
+
+    margin-bottom: 15px;
+
+    color: var(--branco);
+
+    font-size: clamp(32px, 4vw, 45px);
+}
+
+
+.video p {
+
+    margin-bottom: 30px;
+
+    color: var(--texto-suave);
+
+    font-size: 17px;
+}
+
+
+.video-box {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #000000;
+
+    border: 1px solid var(--borda);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.40);
+}
+
+
+.video-box video {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   RODAPÉ — RESERVADO
+========================================================= */
+
+.rodape-placeholder {
+
+    min-height: 180px;
+
+    background: #07140d;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+
+        min-height: 750px;
+    }
+
+
+    .hero-container {
+
+        min-height: 750px;
+
+        padding: 100px 30px 160px;
+    }
+
+
+    .hero-content {
+
+        max-width: 100%;
+    }
+
+
+    .hero-subtitulo {
+
+        font-size: 15px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+    }
+
+
+    .hero-descricao {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       ONDAS
+    ===================================================== */
+
+    .ondas {
+
+        height: 180px;
+    }
+
+
+    .onda-1 {
+
+        bottom: -110px;
+
+        height: 230px;
+    }
+
+
+    .onda-2 {
+
+        bottom: -135px;
+
+        height: 230px;
+    }
+
+
+    .onda-3 {
+
+        bottom: -160px;
+
+        height: 240px;
+    }
+
+
+    /* =====================================================
+       SOBRE
+    ===================================================== */
+
+    .sobre {
+
+        padding: 70px 25px;
+    }
+
+
+    .sobre h2 {
+
+        font-size: 32px;
+    }
+
+
+    .sobre-container > p {
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       BLOCOS
+    ===================================================== */
+
+    .sobre-bloco,
+    .sobre-bloco-invertido {
+
+        grid-template-columns: 1fr;
+
+        direction: ltr;
+
+        gap: 25px;
+    }
+
+
+    /* =====================================================
+       IMAGENS NO CELULAR
+    ===================================================== */
+
+    .sobre-imagem {
+
+        width: 100%;
+
+        height: auto;
+
+        border-radius: 16px;
+    }
+
+
+    .sobre-imagem img {
+
+        width: 100%;
+
+        height: auto;
+
+        object-fit: contain;
+
+        transform: none;
+    }
+
+
+    .sobre-imagem:hover img {
+
+        transform: none;
+    }
+
+
+    /* =====================================================
+       TEXTO DOS BLOCOS
+    ===================================================== */
+
+    .sobre-texto h3 {
+
+        font-size: 26px;
+    }
+
+
+    .sobre-texto p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       VÍDEO
+    ===================================================== */
+
+    .video {
+
+        padding: 70px 20px;
+    }
+
+
+    .video-container {
+
+        width: 100%;
+    }
+
+
+    .video h2 {
+
+        font-size: 32px;
+    }
+
+
+    .video p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+}

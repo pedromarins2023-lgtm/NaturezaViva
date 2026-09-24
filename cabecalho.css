@@ -1,0 +1,105 @@
+/* ========================================
+   CABEÇALHO — TERRA VIVA
+======================================== */
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    background: rgba(235, 235, 235, 0.96);
+
+    border-bottom: 1px solid #dcebe1;
+
+    z-index: 1000;
+
+    box-sizing: border-box;
+}
+
+
+/* CONTAINER */
+
+.cabecalho-container {
+    width: 100%;
+    max-width: 1250px;
+    height: 100%;
+
+    margin: 0 auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+
+/* NOME DO SITE */
+
+.nome-site {
+    color: #1d5c38;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nome-site span {
+    color: #4fa86b;
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.menu a {
+    color: #284535;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #2e7d4f;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        height: auto;
+    }
+
+    .cabecalho-container {
+        padding: 18px 20px;
+
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+}
